@@ -1,1 +1,161 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="26" height="26" style="isolation:isolate" viewBox="66.993 897.484 26 26"><defs><linearGradient xlink:href="#a" id="b" x1=".148" x2=".845" y1=".851" y2=".154" gradientTransform="matrix(26.00048 0 0 25.99935 66.993 897.485)" gradientUnits="userSpaceOnUse"/></defs><linearGradient id="a" x1=".148" x2=".845" y1=".851" y2=".154" gradientTransform="matrix(26.301 0 0 26.331 90.674 911.757)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#004ba6" style="stop-color:#0071ff;stop-opacity:1"/><stop offset="1" stop-color="#00bfe1" style="stop-color:#00bfe1;stop-opacity:1"/></linearGradient><path fill="url(#a)" d="m89.318 903.552-2.135 2.122c-.376.337-.558.879-.347 1.337 1.422 2.976.882 6.524-1.452 8.856-2.335 2.331-5.887 2.87-8.866 1.449-.439-.197-.954-.03-1.292.312l-2.17 2.167a1.154 1.154 0 0 0 .208 1.81 13.005 13.005 0 0 0 15.91-1.912 12.97 12.97 0 0 0 1.956-15.887 1.154 1.154 0 0 0-1.812-.254zm-18.467-2.305a12.969 12.969 0 0 0-2.02 15.885 1.154 1.154 0 0 0 1.812.254l2.124-2.11c.385-.336.572-.884.359-1.348-1.423-2.976-.884-6.524 1.451-8.856 2.334-2.332 5.887-2.871 8.866-1.45.434.194.942.033 1.281-.3l2.182-2.18a1.152 1.152 0 0 0-.208-1.81 13.009 13.009 0 0 0-15.893 1.973z" style="fill:url(#b);stroke-width:.987988"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<defs>
+    <linearGradient id="v04_silverText" gradientUnits="userSpaceOnUse" x1="800" y1="585" x2="800" y2="688">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="52%" stop-color="#D8DEE9"/>
+      <stop offset="100%" stop-color="#8F99AB"/>
+    </linearGradient>
+    <linearGradient id="v04_cyanLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0"/>
+      <stop offset="22%" stop-color="#0EA5E9" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#7DD3FC" stop-opacity="1"/>
+      <stop offset="78%" stop-color="#0EA5E9" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </linearGradient>
+    
+    <!-- Outer Left Pillar Dark Facet -->
+    <linearGradient id="m_outerL" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#20232B"/>
+      <stop offset="30%" stop-color="#6E7583"/>
+      <stop offset="68%" stop-color="#2C303A"/>
+      <stop offset="100%" stop-color="#171A20"/>
+    </linearGradient>
+    <!-- Inner Left Pillar Bright Vertical Face -->
+    <linearGradient id="m_innerL" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3C424E"/>
+      <stop offset="28%" stop-color="#B8C0CE"/>
+      <stop offset="62%" stop-color="#6B7382"/>
+      <stop offset="100%" stop-color="#D7DCE5"/>
+    </linearGradient>
+    <!-- Bottom Left Underside Chamfer -->
+    <linearGradient id="m_footL" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#484E5C"/>
+      <stop offset="48%" stop-color="#1C2027"/>
+      <stop offset="100%" stop-color="#707887"/>
+    </linearGradient>
+
+    <!-- Outer Right Pillar Dark Facet -->
+    <linearGradient id="m_outerR" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1D2027"/>
+      <stop offset="34%" stop-color="#5A616E"/>
+      <stop offset="72%" stop-color="#262A33"/>
+      <stop offset="100%" stop-color="#14171D"/>
+    </linearGradient>
+    <!-- Inner Right Pillar Bright Vertical Face -->
+    <linearGradient id="m_innerR" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#464C5A"/>
+      <stop offset="32%" stop-color="#C8D0DC"/>
+      <stop offset="68%" stop-color="#7C8594"/>
+      <stop offset="100%" stop-color="#E4E9F0"/>
+    </linearGradient>
+    <!-- Bottom Right Underside Chamfer -->
+    <linearGradient id="m_footR" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#454B58"/>
+      <stop offset="50%" stop-color="#1A1E25"/>
+      <stop offset="100%" stop-color="#6B7382"/>
+    </linearGradient>
+
+    <!-- Back Concave Inner Loop Left -->
+    <linearGradient id="m_backL" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#13161B"/>
+      <stop offset="34%" stop-color="#464D5B"/>
+      <stop offset="72%" stop-color="#A6AEBC"/>
+      <stop offset="100%" stop-color="#6C7484"/>
+    </linearGradient>
+    <!-- Back Concave Inner Loop Right -->
+    <linearGradient id="m_backR" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#14171D"/>
+      <stop offset="38%" stop-color="#545B6B"/>
+      <stop offset="76%" stop-color="#9CA4B3"/>
+      <stop offset="100%" stop-color="#3E4450"/>
+    </linearGradient>
+
+    <!-- Front Left-to-Center Sweeping Metallic Ribbon -->
+    <linearGradient id="m_frontL" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="16%" stop-color="#C2CAD6"/>
+      <stop offset="44%" stop-color="#5B6373"/>
+      <stop offset="76%" stop-color="#22262F"/>
+      <stop offset="100%" stop-color="#5A6271"/>
+    </linearGradient>
+    <!-- Front Center-to-Right Sweeping Metallic Ribbon -->
+    <linearGradient id="m_frontR" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2C313B"/>
+      <stop offset="28%" stop-color="#636B7B"/>
+      <stop offset="60%" stop-color="#BAC2CF"/>
+      <stop offset="84%" stop-color="#F4F7FA"/>
+      <stop offset="100%" stop-color="#9BA4B5"/>
+    </linearGradient>
+
+    <!-- Bottom Center U-Fold Rim -->
+    <linearGradient id="m_bottomFold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#646C7C"/>
+      <stop offset="50%" stop-color="#CBD3DF"/>
+      <stop offset="100%" stop-color="#525A69"/>
+    </linearGradient>
+
+    <!-- Specular Rim Edge Highlight -->
+    <linearGradient id="m_specEdge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#CBD5E1"/>
+      <stop offset="100%" stop-color="#64748B"/>
+    </linearGradient>
+  </defs>
+<g id="Titanium_M_Amblem" transform="translate(256, 256) scale(1.30)">
+    
+    <!-- 1. LEFT VERTICAL PILLAR (Outer Dark Face, Bottom Chamfer, Inner Bright Face) -->
+    <g id="Sol_Sutun">
+      <path d="M -156,-106 L -122,-68 L -122,60 L -156,86 Z" fill="url(#m_outerL)"/>
+      <path d="M -156,86 L -122,60 L -85,135 Z" fill="url(#m_footL)"/>
+      <path d="M -122,-68 L -85,-16 L -85,135 L -122,60 Z" fill="url(#m_innerL)"/>
+      <!-- Crisp machined bevel ridge -->
+      <path d="M -122,-68 L -122,60 L -85,135" fill="none" stroke="#F1F5F9" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M -156,-106 L -156,86 L -85,135" fill="none" stroke="#475569" stroke-width="1.2"/>
+    </g>
+
+    <!-- 2. RIGHT VERTICAL PILLAR (Exact Symmetry Mirror) -->
+    <g id="Sag_Sutun">
+      <path d="M 156,-106 L 122,-68 L 122,60 L 156,86 Z" fill="url(#m_outerR)"/>
+      <path d="M 156,86 L 122,60 L 85,135 Z" fill="url(#m_footR)"/>
+      <path d="M 122,-68 L 85,-16 L 85,135 L 122,60 Z" fill="url(#m_innerR)"/>
+      <path d="M 122,-68 L 122,60 L 85,135" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M 156,-106 L 156,86 L 85,135" fill="none" stroke="#475569" stroke-width="1.2"/>
+    </g>
+
+    <!-- 3. BACK CONCAVE INNER RIBBON LOOPS (Depth inside top arches) -->
+    <g id="Ic_Kivrimlar">
+      <!-- Right inner concave loop (passes behind center intersection) -->
+      <path d="M 86,-137 C 76,-135 66,-122 50,-98 L -18,0 L 8,36 L 94,-88 C 102,-104 98,-132 86,-137 Z"
+            fill="url(#m_backR)"/>
+      <!-- Left inner concave loop (sweeps down-right into center V) -->
+      <path d="M -86,-137 C -76,-135 -66,-122 -50,-98 L 28,12 L 2,48 L -94,-88 C -102,-104 -98,-132 -86,-137 Z"
+            fill="url(#m_backL)"/>
+      <!-- Crisp bright inner arch rim highlights -->
+      <path d="M -84,-136 C -74,-134 -64,-120 -48,-96 L 26,10" fill="none" stroke="#E2E8F0" stroke-width="2.2"/>
+      <path d="M 84,-136 C 74,-134 64,-120 48,-96 L 2,-28" fill="none" stroke="#CBD5E1" stroke-width="2"/>
+    </g>
+
+    <!-- 4. FRONT LEFT DESCENDING MAIN RIBBON -->
+    <g id="On_Sol_Serit">
+      <path d="M -156,-106 L -86,-137 C -97,-126 -96,-104 -80,-78 L 2,42 L -26,72 C -32,76 -38,72 -44,64 L -156,-106 Z"
+            fill="url(#m_frontL)"/>
+      <!-- Crisp outer diagonal metallic edge -->
+      <path d="M -156,-106 L -44,64 C -36,75 -26,78 -14,76" fill="none" stroke="#CBD5E1" stroke-width="1.8"/>
+      <path d="M -86,-137 C -98,-126 -96,-102 -80,-78 L 2,42" fill="none" stroke="#FFFFFF" stroke-width="2.4"/>
+    </g>
+
+    <!-- 5. CENTER BOTTOM FLAT-CURVED U-FOLD & FRONT RIGHT ASCENDING MAIN RIBBON -->
+    <g id="On_Sag_Serit">
+      <!-- Bottom sculptural fold lip -->
+      <path d="M -32,68 C -24,78 -14,80 0,80 L 22,80 C 32,80 40,74 46,64 L 28,54 L -18,64 Z"
+            fill="url(#m_bottomFold)"/>
+      <!-- Front right ascending sweeping metallic ribbon -->
+      <path d="M -26,72 C -16,74 -6,66 4,52 L 80,-78 C 96,-104 97,-126 86,-137 L 156,-106 L 44,64 C 36,75 26,80 12,80 L -14,80 C -22,80 -28,77 -32,72 Z"
+            fill="url(#m_frontR)"/>
+      <!-- Top & bottom razor specular metallic ridges -->
+      <path d="M -24,70 C -14,72 -6,65 4,52 L 80,-78 C 96,-104 97,-126 86,-137" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+      <path d="M 156,-106 L 44,64 C 36,75 26,80 12,80 L -16,80" fill="none" stroke="#CBD5E1" stroke-width="1.8"/>
+    </g>
+  </g>
+</svg>
