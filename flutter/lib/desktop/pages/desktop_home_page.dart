@@ -80,11 +80,6 @@ class _DesktopHomePageState extends State<DesktopHomePage>
     final isOutgoingOnly = bind.isOutgoingOnly();
     final children = <Widget>[
       if (!isOutgoingOnly) buildPresetPasswordWarning(),
-      if (bind.isCustomClient())
-        Align(
-          alignment: Alignment.center,
-          child: loadPowered(context),
-        ),
       Align(
         alignment: Alignment.center,
         child: loadLogo(),
@@ -624,18 +619,22 @@ class _DesktopHomePageState extends State<DesktopHomePage>
       children: [
         Container(
           margin: EdgeInsets.fromLTRB(
-              0, marginTop, 0, bind.isIncomingOnly() ? marginTop : 0),
+              8, marginTop, 8, bind.isIncomingOnly() ? marginTop : 8),
           child: Container(
               decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-                colors: [
-                  Color.fromARGB(255, 226, 66, 188),
-                  Color.fromARGB(255, 244, 114, 124),
-                ],
-              )),
-              padding: EdgeInsets.all(20),
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                      color: const Color(0xFF0EA5E9).withOpacity(0.35),
+                      width: 1),
+                  gradient: const LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Color(0xFF131822),
+                      Color(0xFF1E2638),
+                    ],
+                  )),
+              padding: const EdgeInsets.all(16),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -644,7 +643,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
                               Center(
                                   child: Text(
                                 translate(title),
-                                style: TextStyle(
+                                style: const TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 15),
@@ -655,12 +654,12 @@ class _DesktopHomePageState extends State<DesktopHomePage>
                         if (content.isNotEmpty)
                           Text(
                             translate(content),
-                            style: TextStyle(
-                                height: 1.5,
-                                color: Colors.white,
+                            style: const TextStyle(
+                                height: 1.4,
+                                color: Color(0xFFE2E8F0),
                                 fontWeight: FontWeight.normal,
-                                fontSize: 13),
-                          ).marginOnly(bottom: 20)
+                                fontSize: 12),
+                          ).marginOnly(bottom: 16)
                       ] +
                       (btnText.isNotEmpty
                           ? <Widget>[
@@ -668,14 +667,15 @@ class _DesktopHomePageState extends State<DesktopHomePage>
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     FixedWidthButton(
-                                      width: 150,
+                                      width: 140,
                                       padding: 8,
-                                      isOutline: true,
+                                      isOutline: false,
+                                      backgroundColor: MyTheme.accent,
                                       text: translate(btnText),
                                       textColor: Colors.white,
-                                      borderColor: Colors.white,
-                                      textSize: 20,
-                                      radius: 10,
+                                      borderColor: MyTheme.accent,
+                                      textSize: 15,
+                                      radius: 8,
                                       onTap: onPressed,
                                     )
                                   ])
@@ -689,28 +689,27 @@ class _DesktopHomePageState extends State<DesktopHomePage>
                                           await launchUrl(Uri.parse(link!)),
                                       child: Text(
                                         translate(help),
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             decoration:
                                                 TextDecoration.underline,
-                                            color: Colors.white,
+                                            color: Color(0xFF38BDF8),
                                             fontSize: 12),
                                       )).marginOnly(top: 6)),
                             ]
                           : <Widget>[]))),
         ),
-        if (closeButton != null && closeButton == true)
-          Positioned(
-            top: 18,
-            right: 0,
-            child: IconButton(
-              icon: Icon(
-                Icons.close,
-                color: Colors.white,
-                size: 20,
-              ),
-              onPressed: closeCard,
+        Positioned(
+          top: marginTop + 4,
+          right: 12,
+          child: IconButton(
+            icon: const Icon(
+              Icons.close,
+              color: Colors.white60,
+              size: 16,
             ),
+            onPressed: closeCard,
           ),
+        ),
       ],
     );
   }

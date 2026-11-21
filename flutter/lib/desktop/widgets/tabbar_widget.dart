@@ -1468,18 +1468,6 @@ class TabbarTheme extends ThemeExtension<TabbarTheme> {
       required this.closeHoverColor,
       required this.selectedTabBackgroundColor});
 
-  static const light = TabbarTheme(
-      selectedTabIconColor: MyTheme.accent,
-      unSelectedTabIconColor: Color.fromARGB(255, 162, 203, 241),
-      selectedTextColor: Colors.black,
-      unSelectedTextColor: Color.fromARGB(255, 112, 112, 112),
-      selectedIconColor: Color.fromARGB(255, 26, 26, 26),
-      unSelectedIconColor: Color.fromARGB(255, 96, 96, 96),
-      dividerColor: Color.fromARGB(255, 238, 238, 238),
-      hoverColor: Colors.white54,
-      closeHoverColor: Colors.white,
-      selectedTabBackgroundColor: Colors.white54);
-
   static const dark = TabbarTheme(
       selectedTabIconColor: MyTheme.accent,
       unSelectedTabIconColor: Color(0xFF64748B),
@@ -1491,6 +1479,8 @@ class TabbarTheme extends ThemeExtension<TabbarTheme> {
       hoverColor: Color(0xFF1E2430),
       closeHoverColor: Color(0xFF0F1218),
       selectedTabBackgroundColor: Color(0xFF181C24));
+
+  static const light = dark;
 
   @override
   ThemeExtension<TabbarTheme> copyWith({
