@@ -240,6 +240,8 @@ class _DesktopHomePageState extends State<DesktopHomePage>
                         ),
                         style: TextStyle(
                           fontSize: 22,
+                          color: MyTheme.idColor,
+                          fontWeight: FontWeight.bold,
                         ),
                       ).workaroundFreezeLinuxMint(),
                     ),
@@ -336,7 +338,11 @@ class _DesktopHomePageState extends State<DesktopHomePage>
                               contentPadding:
                                   EdgeInsets.only(top: 14, bottom: 10),
                             ),
-                            style: TextStyle(fontSize: 15),
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: MyTheme.idColor,
+                            ),
                           ).workaroundFreezeLinuxMint(),
                         ),
                       ),
