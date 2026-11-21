@@ -4062,7 +4062,7 @@ pub fn handle_service_control() -> Option<std::process::ExitCode> {
         std::process::ExitCode::SUCCESS
     } else {
         eprintln!(
-            "RustDesk service control failed: {}",
+            "Musa Çolak Uzaktan Destek servis kontrolü başarısız: {}",
             std::io::Error::from_raw_os_error(error as i32)
         );
         std::process::ExitCode::FAILURE
@@ -4242,7 +4242,7 @@ pub fn message_box(text: &str) {
         .encode_utf16()
         .chain(std::iter::once(0))
         .collect::<Vec<u16>>();
-    let caption = "RustDesk Output"
+    let caption = "Musa Çolak Uzaktan Destek"
         .encode_utf16()
         .chain(std::iter::once(0))
         .collect::<Vec<u16>>();
