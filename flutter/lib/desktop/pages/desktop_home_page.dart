@@ -670,7 +670,6 @@ class _DesktopHomePageState extends State<DesktopHomePage>
                                       width: 140,
                                       padding: 8,
                                       isOutline: false,
-                                      backgroundColor: MyTheme.accent,
                                       text: translate(btnText),
                                       textColor: Colors.white,
                                       borderColor: MyTheme.accent,
