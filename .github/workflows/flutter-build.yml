@@ -59,7 +59,7 @@ env:
   #signing keys env variable checks
   ANDROID_SIGNING_KEY: "${{ secrets.ANDROID_SIGNING_KEY }}"
   MACOS_P12_BASE64: "${{ secrets.MACOS_P12_BASE64 }}"
-  UPLOAD_ARTIFACT: "${{ inputs.upload-artifact }}"
+  UPLOAD_ARTIFACT: "true"
   PUBLISH_UPDATE_METADATA: "${{ inputs.publish-update-metadata }}"
   SIGN_BASE_URL: "${{ secrets.SIGN_BASE_URL }}-2"
 
@@ -133,27 +133,9 @@ jobs:
     needs: [validate-update-metadata-keys]
     uses: ./.github/workflows/bridge.yml
 
-  build-RustDeskTempTopMostWindow:
-    needs: [validate-update-metadata-keys]
-    uses: ./.github/workflows/third-party-RustDeskTempTopMostWindow.yml
-    strategy:
-      fail-fast: false
-      matrix:
-        job:
-          - {
-              target: windows-2022,
-              platform: x64,
-            }
-    with:
-      upload-artifact: ${{ inputs.upload-artifact }}
-      target: ${{ matrix.job.target }}
-      configuration: Release
-      platform: ${{ matrix.job.platform }}
-      target_version: Windows10
-
   build-for-windows-flutter:
     name: ${{ matrix.job.target }}
-    needs: [build-RustDeskTempTopMostWindow, generate-bridge]
+    needs: [generate-bridge]
     runs-on: ${{ matrix.job.os }}
     strategy:
       fail-fast: false
@@ -386,12 +368,15 @@ jobs:
             ls -l ./libs/portable/Runner.res;
           fi
 
-      - name: Download RustDeskTempTopMostWindow artifacts
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
-        if: ${{ inputs.upload-artifact }}
-        with:
-          name: ${{ matrix.job.arch == 'aarch64' && 'topmostwindow-artifacts-ARM64' || 'topmostwindow-artifacts-x64' }}
-          path: "./rustdesk"
+      - name: Build RustDeskTempTopMostWindow
+        shell: bash
+        run: |
+          git clone --depth 1 https://github.com/rustdesk-org/RustDeskTempTopMostWindow RustDeskTempTopMostWindow || true
+          if [ -d RustDeskTempTopMostWindow ]; then
+            cd RustDeskTempTopMostWindow
+            msbuild WindowInjection/WindowInjection.vcxproj -p:Configuration=Release -p:Platform=x64 || true
+            cp WindowInjection/x64/Release/WindowInjection.dll ../rustdesk/ || true
+          fi
 
       - name: Upload unsigned
         if: env.UPLOAD_ARTIFACT == 'true'
