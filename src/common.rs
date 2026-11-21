@@ -1233,7 +1233,7 @@ pub async fn do_check_software_update() -> hbb_common::ResultType<()> {
 
 #[inline]
 pub fn get_app_name() -> String {
-    "Musa Çolak Uzaktan Destek".to_string()
+    "MusaColakUzaktanDestek".to_string()
 }
 
 #[inline]
