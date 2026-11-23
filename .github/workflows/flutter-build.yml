@@ -411,13 +411,13 @@ jobs:
         if: env.UPLOAD_ARTIFACT == 'true'
         run: |
           sed -i '/dpiAware/d' res/manifest.xml
-          # Rename inner binary to ensure extraction into AppData/Local/musa_colak_destek
-          mv ./rustdesk/rustdesk.exe ./rustdesk/musa_colak_destek.exe
+          # Rename inner binary to match app_name (MusaColakUzaktanDestek.exe)
+          mv ./rustdesk/rustdesk.exe ./rustdesk/MusaColakUzaktanDestek.exe
           pushd ./libs/portable
           pip3 install -r requirements.txt
-          python3 ./generate.py -f ../../rustdesk/ -o . -e ../../rustdesk/musa_colak_destek.exe
+          python3 ./generate.py -f ../../rustdesk/ -o . -e ../../rustdesk/MusaColakUzaktanDestek.exe
           popd
-          mv ./rustdesk/musa_colak_destek.exe ./rustdesk/rustdesk.exe
+          mv ./rustdesk/MusaColakUzaktanDestek.exe ./rustdesk/rustdesk.exe
           mkdir -p ./SignOutput
           mv ./target/release/rustdesk-portable-packer.exe ./SignOutput/rustdesk-${{ env.VERSION }}-${{ matrix.job.arch }}.exe
 
