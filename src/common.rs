@@ -129,6 +129,7 @@ pub fn init_sodium() {
 }
 
 pub fn global_init() -> bool {
+    *hbb_common::config::APP_NAME.write().unwrap() = get_app_name();
     init_sodium();
     #[cfg(all(target_os = "linux", feature = "drm"))]
     crate::platform::linux::dispatch_wayland_display_probe();

@@ -552,6 +552,7 @@ fn service_main(arguments: Vec<OsString>) {
 }
 
 pub fn start_os_service() {
+    *hbb_common::config::APP_NAME.write().unwrap() = crate::get_app_name();
     if let Err(e) =
         windows_service::service_dispatcher::start(crate::get_app_name(), ffi_service_main)
     {
@@ -660,6 +661,7 @@ extern "system" {
 
 #[tokio::main(flavor = "current_thread")]
 async fn run_service(_arguments: Vec<OsString>) -> ResultType<()> {
+    *hbb_common::config::APP_NAME.write().unwrap() = crate::get_app_name();
     let event_handler = move |control_event| -> ServiceControlHandlerResult {
         log::info!("Got service control event: {:?}", control_event);
         match control_event {

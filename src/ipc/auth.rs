@@ -403,7 +403,7 @@ fn paths_refer_to_same_file(left: &Path, right: &Path) -> bool {
     left.dev() == right.dev() && left.ino() == right.ino()
 }
 
-#[cfg(target_os = "macos")]
+#[cfg(any(target_os = "macos", target_os = "windows"))]
 #[inline]
 fn os_str_eq_ignore_ascii_case(
     left: Option<&std::ffi::OsStr>,
@@ -414,6 +414,42 @@ fn os_str_eq_ignore_ascii_case(
     };
     left.to_string_lossy()
         .eq_ignore_ascii_case(&right.to_string_lossy())
+}
+
+#[cfg(target_os = "windows")]
+#[inline]
+fn windows_main_or_service_ipc_allows_peer(
+    peer_exe: &Path,
+    current_exe: &Path,
+    _postfix: &str,
+) -> bool {
+    let peer_name = peer_exe.file_name();
+    let current_name = current_exe.file_name();
+
+    // 1. If both executables have the same file name, allow them
+    // (e.g. installed service in Program Files and portable GUI in AppData\Local)
+    if os_str_eq_ignore_ascii_case(peer_name, current_name) {
+        return true;
+    }
+
+    // 2. Allow known binary names for our custom client
+    let app_name = crate::get_app_name();
+    let app_exe = format!("{}.exe", app_name);
+    let allowed_names: &[&str] = &[
+        &app_exe,
+        "MusaColakUzaktanDestek.exe",
+        "musa_colak_destek.exe",
+        "rustdesk.exe",
+        "RustDesk.exe",
+    ];
+
+    let peer_file = peer_name.and_then(|n| n.to_str()).unwrap_or("");
+    let current_file = current_name.and_then(|n| n.to_str()).unwrap_or("");
+
+    let peer_allowed = allowed_names.iter().any(|&name| peer_file.eq_ignore_ascii_case(name));
+    let current_allowed = allowed_names.iter().any(|&name| current_file.eq_ignore_ascii_case(name));
+
+    peer_allowed && current_allowed
 }
 
 #[cfg(all(windows, not(feature = "flutter")))]
@@ -477,6 +513,10 @@ fn ensure_peer_executable_matches_current_by_pid(peer_pid: u32, postfix: &str) -
     }
     #[cfg(target_os = "macos")]
     if macos_service_ipc_allows_gui_and_service_binaries(&peer_exe, &current_exe, postfix) {
+        return Ok(());
+    }
+    #[cfg(target_os = "windows")]
+    if windows_main_or_service_ipc_allows_peer(&peer_exe, &current_exe, postfix) {
         return Ok(());
     }
     #[cfg(target_os = "windows")]

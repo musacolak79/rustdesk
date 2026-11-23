@@ -144,6 +144,11 @@ jobs:
           name: ${{ matrix.job.arch == 'aarch64' && 'bridge-artifact-flutter-3.44' || 'bridge-artifact' }}
           path: ./
 
+      - name: Patch APP_NAME in hbb_common
+        shell: bash
+        run: |
+          sed -i 's/"RustDesk".to_owned()/"MusaColakUzaktanDestek".to_owned()/g' libs/hbb_common/src/config.rs
+
       - name: Install LLVM and Clang
         uses: KyleMayes/install-llvm-action@ebc0426251bc40c7cd31162802432c68818ab8f0 # v2.0.9
         with:
